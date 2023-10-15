@@ -28,7 +28,6 @@ class AdminMiddleware
         }
         else{
             return redirect('/login')->with('status','Please Log in First');
-
         }
         
     }
