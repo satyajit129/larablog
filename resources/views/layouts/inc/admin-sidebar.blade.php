@@ -7,7 +7,7 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-grip"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="">
+                <a class="nav-link" href=" {{ route('admin.PostCategory.index') }} ">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-bars-progress"></i></div>
                     Category
                 </a>
