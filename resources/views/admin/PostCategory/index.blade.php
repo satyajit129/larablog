@@ -1,8 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'Blog Category')
+@section('title', 'Category')
 @section('content')
     <div class="card">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="card-header">
             <div class="row">
                 <div class="col-sm-5">
@@ -50,8 +55,8 @@
                                 <td class="text-center align-middle">{{ $category->status == 1? "Yes":"No" }}</td>
                                 <td class="btn-td text-center align-middle">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Option">
-                                        <a href="{{ route('admin.PostCategory.edit') }}" class="btn btn-success m-1">Edit</a>
-                                        <a href="" onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
+                                        <a href="{{ route('admin.PostCategory.edit',['id'=>$category->id]) }}" class="btn btn-success m-1">Edit</a>
+                                        <a href="{{ route('admin.PostCategory.destroy',$category->id) }}" onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
                                     </div>
 
                                 </td>

@@ -27,13 +27,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index']);
-    
-    
 });
+
+// route of category edit and delete
 Route::prefix('admin/PostCategory')->group(function () {
     Route::get('/', [PostCategoryController::class, 'index'])->name('admin.PostCategory.index');
     Route::get('/create', [PostCategoryController::class, 'create'])->name('admin.PostCategory.create');
     Route::post('/store', [PostCategoryController::class, 'store'])->name('admin.PostCategory.store');
-    Route::get('/edit', [PostCategoryController::class, 'edit'])->name('admin.PostCategory.edit');
-    // Add more routes for categories if needed
+    Route::get('/edit/{id}', [PostCategoryController::class, 'edit'])->name('admin.PostCategory.edit');
+    Route::post('/update/{id}', [PostCategoryController::class, 'update'])->name('admin.PostCategory.update');
+    Route::get('/destroy/{id}', [PostCategoryController::class, 'destroy'])->name('admin.PostCategory.destroy');
 });

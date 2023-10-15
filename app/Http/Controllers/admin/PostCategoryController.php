@@ -6,6 +6,7 @@ use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class PostCategoryController extends Controller
 {
     /**
@@ -78,7 +79,8 @@ class PostCategoryController extends Controller
      */
     public function edit($id)
     {
-        dd('111111');
+        $editdata = PostCategory::find($id);
+        return view('admin.PostCategory.update', compact('editdata'));
     }
 
     /**
@@ -90,7 +92,24 @@ class PostCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'title' => 'required',
+            'meta_title' => 'required',
+            'meta_keyword' => 'required',
+            'meta_description' => 'required',
+        ]);
+        $category = PostCategory::find($id);
+        if (!$category) {
+            return redirect('admin.PostCategory.index')->with('error', 'Category not found.');
+        }
+        $category->name = $request->input('title');
+        $category->meta_title = $request->input('meta_title');
+        $category->meta_keyword = $request->input('meta_keyword');
+        $category->meta_description = $request->input('meta_description');
+        $category->save();
+
+        return redirect()->route('admin.PostCategory.index')->withFlashSuccess('Category Update Successfully');
     }
 
     /**
@@ -101,6 +120,8 @@ class PostCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deletedata = PostCategory::find($id);
+        $deletedata-> delete();
+        return redirect()->route('admin.PostCategory.index')->withFlashSuccess('Category Delete Successfully');
     }
 }
