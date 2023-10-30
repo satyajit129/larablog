@@ -11,7 +11,7 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-bars-progress"></i></div>
                     Category
                 </a>
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('admin.PostSubCategory.index') }} ">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     SubCategory
                 </a>

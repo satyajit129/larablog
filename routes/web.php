@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\PostCategoryController;
+use App\Http\Controllers\admin\PostSubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,13 @@ Route::prefix('admin/PostCategory')->group(function () {
     Route::get('/edit/{id}', [PostCategoryController::class, 'edit'])->name('admin.PostCategory.edit');
     Route::post('/update/{id}', [PostCategoryController::class, 'update'])->name('admin.PostCategory.update');
     Route::get('/destroy/{id}', [PostCategoryController::class, 'destroy'])->name('admin.PostCategory.destroy');
+});
+
+Route::prefix('admin/PostSubCategory')->group(function () {
+    Route::get('/', [PostSubCategoryController::class, 'index'])->name('admin.PostSubCategory.index');
+    Route::get('/create', [PostSubCategoryController::class, 'create'])->name('admin.PostSubCategory.create');
+    Route::post('/store', [PostSubCategoryController::class, 'store'])->name('admin.PostSubCategory.store');
+    Route::get('/edit/{id}', [PostSubCategoryController::class, 'edit'])->name('admin.PostSubCategory.edit');
+    Route::post('/update/{id}', [PostSubCategoryController::class, 'update'])->name('admin.PostSubCategory.update');
+    Route::get('/destroy/{id}', [PostSubCategoryController::class, 'destroy'])->name('admin.PostSubCategory.destroy');
 });
