@@ -18,23 +18,34 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" name="title"
+                            <input type="text" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" name="title"
                                 aria-describedby="emailHelp">
-
+                            @error('title')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Meta Title</label>
-                            <input type="text" required name="meta_title" class="form-control"
+                            <input type="text" value="{{ old('meta_title') }}"  name="meta_title" class="form-control"
                                 id="exampleInputPassword1">
+                            @error('meta_title')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Meta Keyword</label>
-                            <input type="text" required name="meta_keyword" class="form-control"
+                            <input type="text" value="{{ old('meta_keyword') }}"  name="meta_keyword" class="form-control"
                                 id="exampleInputPassword1">
+                            @error('meta_keyword')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Meta Description</label>
-                            <textarea required name="meta_description" class="form-control" rows="3"></textarea>
+                            <textarea  name="meta_description" class="form-control" rows="3">{{ old('meta_description') }}</textarea>
+                            @error('meta_description')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div><!--col-->
                 </div><!--row-->
@@ -46,8 +57,13 @@
                         <button type="submit" class="btn btn-success">Add</button>
                     </div><!--col--> --}}
                     <div class="btn-group d-flex justify-content-between btn-group-sm" role="group" aria-label="Option">
-                        <a href="" class="btn btn-success m-1">Add</a>
-                        <a href="{{ route('admin.PostCategory.index') }}"  class="btn btn-danger m-1">Back</a>
+                        
+                        {{-- <a href="" class="btn btn-success m-1">Add</a>
+                        <a href="{{ route('admin.PostCategory.index') }}"  class="btn btn-danger m-1">Back</a> --}}
+
+                        <button type="submit" class="btn btn-success m-1">Add</button>
+                        <a href="{{ route('admin.PostCategory.index') }}" class="btn btn-danger m-1">Back</a>
+
                     </div>
                 </div><!--row-->
             </div><!--card-footer-->

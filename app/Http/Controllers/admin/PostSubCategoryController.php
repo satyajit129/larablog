@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\PostCategory;
 use Illuminate\Http\Request;
+use App\Models\PostSubCategory;
+use App\Http\Controllers\Controller;
 
 class PostSubCategoryController extends Controller
 {
@@ -14,7 +16,9 @@ class PostSubCategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.PostSubCategory.index');
+        
+        $post_sub_categories = PostSubCategory::latest()->get();
+        return view('admin.PostSubCategory.index',compact('post_sub_categories'));
     }
 
     /**
@@ -24,7 +28,9 @@ class PostSubCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.PostSubCategory.create');
+        $categories=PostCategory::all();
+        return view('admin.PostSubCategory.create',compact('categories'));
+        // return view('admin.PostSubCategory.create');
     }
 
     /**
@@ -35,7 +41,29 @@ class PostSubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'post_category_id'=>'required',
+            'meta_title'=>'required',
+            'meta_keyword'=>'required',
+            'meta_description'=>'required',
+        ]);
+        $create=PostSubCategory::create([
+            'name'=>$request->name,
+            'post_category_id'=>$request->post_category_id,
+            'status'=>1,
+            'meta_title'=>$request->meta_title,
+            'meta_keyword'=>$request->meta_keyword,
+            'meta_description'=>$request->meta_description,
+
+        ]);
+
+        if ($create){
+            return redirect()->route('admin.PostSubCategory.index')->withFlashSuccess('SubCategory Created Successfully');
+        }
+        else{
+            return back();
+        }
     }
 
     /**
@@ -57,7 +85,9 @@ class PostSubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories=PostCategory::all();
+        $subcategoryedit = PostSubCategory::find($id);
+        return view('admin.PostSubCategory.update', compact('subcategoryedit','categories'));
     }
 
     /**
@@ -68,9 +98,31 @@ class PostSubCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+{
+    $request->validate([
+        'name' => 'required',
+        'post_category_id' => 'required',
+        'meta_title' => 'required',
+        'meta_keyword' => 'required',
+        'meta_description' => 'required',
+    ]);
+
+    $subcategory = PostSubCategory::find($id);
+
+    if (!$subcategory) {
+        return redirect()->route('admin.PostSubCategory.index')->with('error', 'SubCategory not found.');
     }
+
+    $subcategory->name = $request->name;
+    $subcategory->post_category_id = $request->post_category_id;
+    $subcategory->meta_title = $request->meta_title;
+    $subcategory->meta_keyword = $request->meta_keyword;
+    $subcategory->meta_description = $request->meta_description;
+    $subcategory->save();
+
+    return redirect()->route('admin.PostSubCategory.index')->withFlashSuccess('SubCategory Updated Successfully');
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -79,7 +131,16 @@ class PostSubCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+{
+    $subcategory = PostSubCategory::find($id);
+
+    if (!$subcategory) {
+        return redirect()->route('admin.PostSubCategory.index')->with('error', 'SubCategory not found.');
     }
+
+    $subcategory->delete();
+
+    return redirect()->route('admin.PostSubCategory.index')->withFlashSuccess('SubCategory Deleted Successfully');
+}
+
 }

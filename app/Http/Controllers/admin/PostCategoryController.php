@@ -17,7 +17,7 @@ class PostCategoryController extends Controller
     public function index()
     {
         $post_categories = PostCategory::latest()->get();
-        return view('admin.PostCategory.index',compact('post_categories'));
+        return view('admin.PostCategory.index', compact('post_categories'));
     }
 
     /**
@@ -36,8 +36,9 @@ class PostCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+
+        // Store a newly created category in the database
+        public function store(Request $request)
         {
             $request->validate([
                 'title' => 'required',
@@ -45,6 +46,7 @@ class PostCategoryController extends Controller
                 'meta_keyword' => 'required',
                 'meta_description' => 'required',
             ]);
+    
             $create = PostCategory::create([
                 'name' => $request->title,
                 'status' => 1,
@@ -52,13 +54,11 @@ class PostCategoryController extends Controller
                 'meta_keyword' => $request->meta_keyword,
                 'meta_description' => $request->meta_description,
             ]);
-            if ($create) {
-                return redirect()->route('admin.PostCategory.index')->withFlashSuccess('Category Created Successfully');
-            } else {
-                return back();
-            }
+    
+            return redirect()->route('admin.PostCategory.index')->withFlashSuccess('Category Created Successfully');
         }
-    }
+    
+
 
     /**
      * Display the specified resource.
@@ -92,7 +92,7 @@ class PostCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $request->validate([
             'title' => 'required',
             'meta_title' => 'required',
@@ -121,7 +121,7 @@ class PostCategoryController extends Controller
     public function destroy($id)
     {
         $deletedata = PostCategory::find($id);
-        $deletedata-> delete();
+        $deletedata->delete();
         return redirect()->route('admin.PostCategory.index')->withFlashSuccess('Category Delete Successfully');
     }
 }
