@@ -54,6 +54,7 @@ class PostCategoryController extends Controller
                 'meta_keyword' => $request->meta_keyword,
                 'meta_description' => $request->meta_description,
             ]);
+            
     
             return redirect()->route('admin.PostCategory.index')->withFlashSuccess('Category Created Successfully');
         }

@@ -12,12 +12,12 @@
                 <div class="col">
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Title</label>
+                            <label for="exampleInputEmail1" class="form-label">SubCategory Title</label>
                             <input type="text"  class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
 
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Category</label>
+                            <label for="exampleInputEmail1" class="form-label">SubCategory Category</label>
                             <select class="form-select form-control" name="post_category_id" aria-label="Default select example">
                                 <option selected>Open this select menu</option>
                                 @foreach ($categories as $category)
@@ -26,15 +26,15 @@
                               </select>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Meta Title</label>
+                            <label for="exampleInputPassword1" class="form-label">SubCategory Meta Title</label>
                             <input type="text" required name="meta_title" class="form-control" id="exampleInputPassword1">
                         </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Meta Keyword</label>
+                        <label for="exampleInputPassword1" class="form-label">SubCategory Meta Keyword</label>
                         <input type="text" required name="meta_keyword" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Meta Description</label>
+                        <label for="exampleInputPassword1" class="form-label">SubCategory Meta Description</label>
                         <textarea required name="meta_description" class="form-control" rows="3"></textarea>
                     </div>
 

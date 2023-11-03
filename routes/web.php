@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\PostCategoryController;
 use App\Http\Controllers\admin\PostSubCategoryController;
+use App\Http\Controllers\admin\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class,'index']);
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 });
 
-// route of category edit and delete
+// route of category 
 Route::prefix('admin/PostCategory')->group(function () {
     Route::get('/', [PostCategoryController::class, 'index'])->name('admin.PostCategory.index');
     Route::get('/create', [PostCategoryController::class, 'create'])->name('admin.PostCategory.create');
@@ -40,6 +41,7 @@ Route::prefix('admin/PostCategory')->group(function () {
     Route::get('/destroy/{id}', [PostCategoryController::class, 'destroy'])->name('admin.PostCategory.destroy');
 });
 
+// route of Subcategory 
 Route::prefix('admin/PostSubCategory')->group(function () {
     Route::get('/', [PostSubCategoryController::class, 'index'])->name('admin.PostSubCategory.index');
     Route::get('/create', [PostSubCategoryController::class, 'create'])->name('admin.PostSubCategory.create');
@@ -47,4 +49,14 @@ Route::prefix('admin/PostSubCategory')->group(function () {
     Route::get('/edit/{id}', [PostSubCategoryController::class, 'edit'])->name('admin.PostSubCategory.edit');
     Route::post('/update/{id}', [PostSubCategoryController::class, 'update'])->name('admin.PostSubCategory.update');
     Route::get('/destroy/{id}', [PostSubCategoryController::class, 'destroy'])->name('admin.PostSubCategory.destroy');
+});
+
+// route of Tag 
+Route::prefix('admin/PostTag')->group(function () {
+    Route::get('/', [TagController::class, 'index'])->name('admin.PostTag.index');
+    Route::get('/create', [TagController::class, 'create'])->name('admin.PostTag.create');
+    Route::post('/store', [TagController::class, 'store'])->name('admin.PostTag.store');
+    Route::get('/edit/{id}', [TagController::class, 'edit'])->name('admin.PostTag.edit');
+    Route::post('/update/{id}', [TagController::class, 'update'])->name('admin.PostTag.update');
+    Route::get('/destroy/{id}', [TagController::class, 'destroy'])->name('admin.PostTag.destroy');
 });

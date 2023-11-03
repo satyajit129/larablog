@@ -1,15 +1,15 @@
 @extends('layouts.master')
-@section('title', 'Category ADD')
+@section('title', 'Tag ADD')
 
 @section('content')
-    <form action="{{ route('admin.PostCategory.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.PostTag.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="card">
             <div class="card-header">
                 <div class="row">
                     <h4 class="card-title mb-0">
                         Add
-                        <small class="text-muted"> Post Catgory</small>
+                        <small class="text-muted"> Post Tag</small>
                     </h4>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Category Title</label>
+                            <label for="exampleInputEmail1" class="form-label">Tag Title</label>
                             <input type="text" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" name="title"
                                 aria-describedby="emailHelp">
                             @error('title')
@@ -25,7 +25,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category Meta Title</label>
+                            <label for="exampleInputPassword1" class="form-label">Tag Meta Title</label>
                             <input type="text" value="{{ old('meta_title') }}"  name="meta_title" class="form-control"
                                 id="exampleInputPassword1">
                             @error('meta_title')
@@ -33,7 +33,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category Meta Keyword</label>
+                            <label for="exampleInputPassword1" class="form-label">Tag Meta Keyword</label>
                             <input type="text" value="{{ old('meta_keyword') }}"  name="meta_keyword" class="form-control"
                                 id="exampleInputPassword1">
                             @error('meta_keyword')
@@ -41,7 +41,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Category Meta Description</label>
+                            <label for="exampleInputPassword1" class="form-label">Tag Meta Description</label>
                             <textarea  name="meta_description" class="form-control" rows="3">{{ old('meta_description') }}</textarea>
                             @error('meta_description')
                                 <span class="text-danger">{{ $message }}</span>
@@ -62,7 +62,7 @@
                         <a href="{{ route('admin.PostCategory.index') }}"  class="btn btn-danger m-1">Back</a> --}}
 
                         <button type="submit" class="btn btn-success m-1">Add</button>
-                        <a href="{{ route('admin.PostCategory.index') }}" class="btn btn-danger m-1">Back</a>
+                        <a href="{{ route('admin.PostTag.index') }}" class="btn btn-danger m-1">Back</a>
 
                     </div>
                 </div><!--row-->
