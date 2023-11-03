@@ -19,7 +19,7 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-chart-simple"></i></i></div>
                     Tag
                 </a>
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('admin.BlogPost.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Post
                 </a>

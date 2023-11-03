@@ -31,7 +31,7 @@
             <div class="row mt-4">
                 <div class="col">
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped text-center">
                             <thead>
                                 <tr>
                                     <th class="text-center align-middle">S/N</th>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\BlogPost;
 use App\Models\PostCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -59,4 +60,14 @@ Route::prefix('admin/PostTag')->group(function () {
     Route::get('/edit/{id}', [TagController::class, 'edit'])->name('admin.PostTag.edit');
     Route::post('/update/{id}', [TagController::class, 'update'])->name('admin.PostTag.update');
     Route::get('/destroy/{id}', [TagController::class, 'destroy'])->name('admin.PostTag.destroy');
+});
+
+// route of Post 
+Route::prefix('admin/Post')->group(function () {
+    Route::get('/', [BlogPost::class, 'index'])->name('admin.BlogPost.index');
+    Route::get('/create', [BlogPost::class, 'create'])->name('admin.BlogPost.create');
+    Route::post('/store', [BlogPost::class, 'store'])->name('admin.BlogPost.store');
+    Route::get('/edit/{id}', [BlogPost::class, 'edit'])->name('admin.BlogPost.edit');
+    Route::post('/update/{id}', [BlogPost::class, 'update'])->name('admin.BlogPost.update');
+    Route::get('/destroy/{id}', [BlogPost::class, 'destroy'])->name('admin.BlogPost.destroy');
 });
