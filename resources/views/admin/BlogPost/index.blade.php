@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="card">
-        @if (session('success'))
+        @if (session()->has('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
@@ -38,14 +38,42 @@
                                     <th> Thumb Image </th>
                                     <th> Banner Image </th>
                                     <th> Post Description </th>
-                                    <th> Meta_title </th>
-                                    <th> meta_keyword </th>
+                                    <th> Meta title </th>
+                                    <th> meta keyword </th>
                                     <th> Meta Description </th>
                                     <th> Status </th>
                                     <th> Action </th>
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                @foreach ($posts as $post)
+                                    
+                                
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $post->title }}</td>
+                                    <td> <details> {{ $post->category->name }}</details> </td>
+                                    <td> <details> {{ $post->subcategory->name }}</details> </td>
+                                    <td> <img src="{{ asset($post->thumb_image) }}" alt="Thumb Image" width="50px" ></td>
+                                    <td> <img src="{{ asset($post->banner_image) }}" alt="Banner Image" width="50px"></td>
+                                    <td> <details> {!! $post->description  !!}</details> </td>
+                                    <td> <details> {{ $post->meta_title }}</details> </td>
+                                    <td> <details> {{ $post->meta_keyword }}</details> </td>
+                                    <td> <details> {{ $post->meta_description }}</details> </td>
+                                    <td>{{ $post->status == 1? "Active":"InActive" }}</td>
+
+                                    <td class="btn-td">                                                                             
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Option">
+                                            {{-- <a href="{{ route('admin.BlogPost.show',$post->id)}}" class="btn btn-info m-1">Show</a> --}}
+                                            <a href="" class="btn btn-success m-1">Edit</a>
+                                            <a href=""onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
+            
+                                         </div>
+
+                                    </td>
+                                </tr>
+                                @endforeach
 
 
                             </tbody>

@@ -25,6 +25,13 @@
 </head>
 
 <body>
+    <style>
+        .card{
+            font-size: 14px !important;
+        }
+        
+
+    </style>
 
     @include('layouts.inc.admin-navbar')
 

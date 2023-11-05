@@ -18,7 +18,8 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        $posts = BlogPost::where('status', 1)->latest()->get();
+        $posts = BlogPost::latest()->get();
+        
         return view('admin.BlogPost.index', compact('posts'));
     }
 
