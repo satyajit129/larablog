@@ -76,6 +76,11 @@ class PostSubCategoryController extends Controller
     {
         //
     }
+    public function byCategory($id)
+    {
+        $subcategories = PostSubCategory::where('post_category_id',$id)->where('status',1)->get();
+        return view('admin.BlogPost.subcategory',compact('subcategories'));
+    }
 
     /**
      * Show the form for editing the specified resource.

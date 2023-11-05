@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\BlogPost;
-use App\Models\PostCategory;
+use App\Http\Controllers\admin\BlogPostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
@@ -50,6 +50,7 @@ Route::prefix('admin/PostSubCategory')->group(function () {
     Route::get('/edit/{id}', [PostSubCategoryController::class, 'edit'])->name('admin.PostSubCategory.edit');
     Route::post('/update/{id}', [PostSubCategoryController::class, 'update'])->name('admin.PostSubCategory.update');
     Route::get('/destroy/{id}', [PostSubCategoryController::class, 'destroy'])->name('admin.PostSubCategory.destroy');
+    Route::get('/byCategory/{id}', [PostSubCategoryController::class,'byCategory'])->name('admin.PostSubCategory.byCategory');
 });
 
 // route of Tag 
@@ -64,10 +65,11 @@ Route::prefix('admin/PostTag')->group(function () {
 
 // route of Post 
 Route::prefix('admin/Post')->group(function () {
-    Route::get('/', [BlogPost::class, 'index'])->name('admin.BlogPost.index');
-    Route::get('/create', [BlogPost::class, 'create'])->name('admin.BlogPost.create');
-    Route::post('/store', [BlogPost::class, 'store'])->name('admin.BlogPost.store');
-    Route::get('/edit/{id}', [BlogPost::class, 'edit'])->name('admin.BlogPost.edit');
-    Route::post('/update/{id}', [BlogPost::class, 'update'])->name('admin.BlogPost.update');
-    Route::get('/destroy/{id}', [BlogPost::class, 'destroy'])->name('admin.BlogPost.destroy');
+    
+    Route::get('/', [BlogPostController::class, 'index'])->name('admin.BlogPost.index');
+    Route::get('/create', [BlogPostController::class, 'create'])->name('admin.BlogPost.create');
+    Route::post('/store', [BlogPostController::class, 'store'])->name('admin.BlogPost.store');
+    Route::get('/edit/{id}', [BlogPostController::class, 'edit'])->name('admin.BlogPost.edit');
+    Route::post('/update/{id}', [BlogPostController::class, 'update'])->name('admin.BlogPost.update');
+    Route::get('/destroy/{id}', [BlogPostController::class, 'destroy'])->name('admin.BlogPost.destroy');
 });
