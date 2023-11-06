@@ -1,10 +1,8 @@
-@extends('backend.layouts.app')
+@extends('layouts.master')
+@section('title', 'Post ADD')
 
-@push('after-styles')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-@endpush
 @section('content')
-    <form action="{{ route('admin.blog_post.update',$editdata->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.BlogPost.update',$editdata->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="card">
             <div class="card-body">
@@ -42,11 +40,17 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Tag </label>
-                            <select class="form-select form-control" name="tag_id[]" id="select_two" multiple aria-label="Default select example">
+                            {{-- <select class="form-select form-control" name="tag_id[]" id="select_two" multiple aria-label="Default select example">
                                 @foreach ($tags as $tag)
                                     <option {{ in_array($tag->id,$tag_data) ? "selected":'' }} value="{{$tag->id}}">{{$tag->name}}</option>
                                 @endforeach
 
+                            </select> --}}
+                            <select class="js-example-basic-multiple form-select form-control" name="tag_id[]"
+                                multiple="multiple">
+                                @foreach ($tags as $tag)
+                                <option {{ in_array($tag->id,$tag_data) ? "selected":'' }} value="{{$tag->id}}">{{$tag->name}}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -83,9 +87,7 @@
 
             <div class="card-footer clearfix">
                 <div class="row">
-                    <div class="col">
-                        {{ form_cancel(route('admin.post_banner.index'), __('buttons.general.cancel')) }}
-                    </div><!--col-->
+                    
 
                     <div class="col text-right">
                         <button type="submit" class="btn btn-success">Update</button>

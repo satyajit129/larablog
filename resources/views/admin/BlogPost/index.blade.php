@@ -55,8 +55,8 @@
                                     <td>{{ $post->title }}</td>
                                     <td> <details> {{ $post->category->name }}</details> </td>
                                     <td> <details> {{ $post->subcategory->name }}</details> </td>
-                                    <td> <img src="{{ asset($post->thumb_image) }}" alt="Thumb Image" width="50px" ></td>
-                                    <td> <img src="{{ asset($post->banner_image) }}" alt="Banner Image" width="50px"></td>
+                                    <td><img src="{{ asset('storage/images/' . $post->thumb_image) }}" width="50px" alt="Thumbnail Image"></td>
+                                    <td><img src="{{ asset('storage/images/' . $post->banner_image) }}" width="50px" alt="Banner Image"></td>
                                     <td> <details> {!! $post->description  !!}</details> </td>
                                     <td> <details> {{ $post->meta_title }}</details> </td>
                                     <td> <details> {{ $post->meta_keyword }}</details> </td>
@@ -66,8 +66,8 @@
                                     <td class="btn-td">                                                                             
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Option">
                                             {{-- <a href="{{ route('admin.BlogPost.show',$post->id)}}" class="btn btn-info m-1">Show</a> --}}
-                                            <a href="" class="btn btn-success m-1">Edit</a>
-                                            <a href=""onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
+                                            <a href="{{ route('admin.BlogPost.edit',$post->id) }}" class="btn btn-success m-1">Edit</a>
+                                            <a href="{{ route('admin.BlogPost.destroy',$post->id) }}"onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
             
                                          </div>
 
@@ -77,10 +77,19 @@
 
 
                             </tbody>
+                            
                         </table>
                     </div>
                 </div><!--col-->
             </div><!--row-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        {{ $posts->links() }}
+                    </div>
+                </div>
+            </div>
+            
 
         </div><!--card-body-->
     </div><!--card-->
