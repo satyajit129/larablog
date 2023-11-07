@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\PostCategoryController;
 use App\Http\Controllers\admin\PostSubCategoryController;
 use App\Http\Controllers\admin\TagController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,6 @@ use App\Http\Controllers\admin\TagController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -32,6 +30,17 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
 });
 
+// FrontEnd Route
+Route::get('/',[PageController::class,'index'])->name('index');
+Route::get('/about',[PageController::class,'about'])->name('about');
+Route::get('/services',[PageController::class,'services'])->name('services');
+Route::get('/contact',[PageController::class,'contact'])->name('contact');
+Route::get('/team',[PageController::class,'team'])->name('team');
+
+
+
+
+// BackEnd Route
 // route of category 
 Route::prefix('admin/PostCategory')->group(function () {
     Route::get('/', [PostCategoryController::class, 'index'])->name('admin.PostCategory.index');

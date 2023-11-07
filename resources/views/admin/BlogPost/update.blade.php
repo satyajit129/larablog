@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Post ADD')
+@section('title', 'Post Edit')
 
 @section('content')
     <form action="{{ route('admin.BlogPost.update',$editdata->id) }}" method="post" enctype="multipart/form-data">

@@ -27,6 +27,8 @@
 <body>
     <style>
         .card{
+            max-height: 500px;
+            overflow-y: auto;
             font-size: 14px !important;
         }
         
