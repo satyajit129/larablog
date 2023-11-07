@@ -19,49 +19,6 @@
 
     </section><!-- End Hero Section -->
 
-
-@section('client-section')
-    <!-- client Section - Home Page -->
-    <section id="clients" class="clients">
-
-        <div class="container-fluid" data-aos="fade-up">
-
-            <div class="row gy-4">
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{{ asset('Frontend/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{{ asset('Frontend/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{{ asset('Frontend/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{{ asset('Frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{{ asset('Frontend/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{{ asset('Frontend/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-            </div>
-
-        </div>
-
-    </section><!-- End Clients Section -->
-
-
-
-
-
 @section('countdown-section')
     <!-- countdown Section - Home Page -->
     <section id="stats" class="stats">
@@ -134,8 +91,7 @@
                     </p>
                     <a href="#" class="btn btn-get-started">Get Started</a>
                 </div>
-                <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out"
-                    data-aos-delay="100">
+                <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
                     <div class="image-stack">
                         <img src="{{ asset('Frontend/assets/img/features-light-1.jpg') }}" alt=""
                             class="stack-front">
@@ -201,7 +157,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-1.jpg') }}"
                                 title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                     class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -215,7 +171,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-2.jpg') }}"
                                 title="Product 1" data-gallery="portfolio-gallery-product"
                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -229,7 +185,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-3.jpg') }}"
                                 title="Branding 1" data-gallery="portfolio-gallery-branding"
                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -243,7 +199,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-4.jpg') }}"
                                 title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                     class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -257,7 +213,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-5.jpg') }}"
                                 title="Product 2" data-gallery="portfolio-gallery-product"
                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -271,7 +227,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-6.jpg') }}"
                                 title="Branding 2" data-gallery="portfolio-gallery-branding"
                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -285,7 +241,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-7.jpg') }}"
                                 title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                     class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -299,7 +255,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/masonry-portfolio-8.jpg') }}"
                                 title="Product 3" data-gallery="portfolio-gallery-product"
                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -313,7 +269,7 @@
                             <a href="{{ asset('Frontend/assets/img/masonry-portfolio/}masonry-portfolio-9.jpg') }}"
                                 title="Branding 2" data-gallery="portfolio-gallery-branding"
                                 class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                            <a href="{{ route('portfolio-single') }}" title="More Details" class="details-link"><i
                                     class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -421,133 +377,7 @@
 
     </section><!-- End Faq Section -->
 
-@section('team-section')
-    <!-- Team Section - Home Page -->
-    <section id="team" class="team">
 
-        <!--  Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Team</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-5">
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="{{ asset('Frontend/assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Walter White</h4>
-                        <span>Chief Executive Officer</span>
-                        <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum
-                            distinctio dire flow</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-img">
-                        <img src="{{ asset('Frontend/assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Sarah Jhonson</h4>
-                        <span>Product Manager</span>
-                        <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores
-                            exercitationem ut</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="member-img">
-                        <img src="{{ asset('Frontend/assets/img/team/team-3.jpg') }}" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>William Anderson</h4>
-                        <span>CTO</span>
-                        <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel
-                            tque sed facilis at qui</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-                    <div class="member-img">
-                        <img src="{{ asset('Frontend/assets/img/team/team-4.jpg') }}" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Amanda Jepson</h4>
-                        <span>Accountant</span>
-                        <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam
-                            quasi quam consectetur</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-                    <div class="member-img">
-                        <img src="{{ asset('Frontend/assets/img/team/team-5.jpg') }}" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Brian Doe</h4>
-                        <span>Marketing</span>
-                        <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus
-                            quia impedit laborum velit</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-                    <div class="member-img">
-                        <img src="{{ asset('Frontend/assets/img/team/team-6.jpg') }}" class="img-fluid" alt="">
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Josepha Palas</h4>
-                        <span>Operation</span>
-                        <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis
-                            fugit eligendi cupiditate vel</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-            </div>
-
-        </div>
-
-    </section><!-- End Team Section -->
 
 @section('recent-post')
     <!-- Recent-posts Section - Home Page -->
@@ -653,102 +483,43 @@
         </div>
 
     </section><!-- End Recent-posts Section -->
-@section('contact-section')
-    <!-- Contact Section - Home Page -->
-    <section id="contact" class="contact">
 
-        <!--  Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Contact</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
+@section('client-section')
+    <!-- client Section - Home Page -->
+    <section id="clients" class="clients">
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container-fluid" data-aos="fade-up">
 
             <div class="row gy-4">
 
-                <div class="col-lg-6">
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{ asset('Frontend/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
 
-                    <div class="row gy-4">
-                        <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="200">
-                                <i class="bi bi-geo-alt"></i>
-                                <h3>Address</h3>
-                                <p>A108 Adam Street</p>
-                                <p>New York, NY 535022</p>
-                            </div>
-                        </div><!-- End Info Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{ asset('Frontend/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
 
-                        <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="300">
-                                <i class="bi bi-telephone"></i>
-                                <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
-                                <p>+1 6678 254445 41</p>
-                            </div>
-                        </div><!-- End Info Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{ asset('Frontend/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
 
-                        <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="400">
-                                <i class="bi bi-envelope"></i>
-                                <h3>Email Us</h3>
-                                <p>info@example.com</p>
-                                <p>contact@example.com</p>
-                            </div>
-                        </div><!-- End Info Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{ asset('Frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
 
-                        <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="500">
-                                <i class="bi bi-clock"></i>
-                                <h3>Open Hours</h3>
-                                <p>Monday - Friday</p>
-                                <p>9:00AM - 05:00PM</p>
-                            </div>
-                        </div><!-- End Info Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{ asset('Frontend/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
 
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-                        data-aos-delay="200">
-                        <div class="row gy-4">
-
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                    required>
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                    required>
-                            </div>
-
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                    required>
-                            </div>
-
-                            <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                            </div>
-
-                            <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                <button type="submit">Send Message</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div><!-- End Contact Form -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{ asset('Frontend/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
 
             </div>
 
         </div>
 
-    </section><!-- End Contact Section -->
+    </section><!-- End Clients Section -->
+
 @endsection

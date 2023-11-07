@@ -425,6 +425,13 @@
 </head>
 
 <body class="index-page antialiased" data-bs-spy="scroll" data-bs-target="#navmenu">
+    
+    <div id="preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
     <!-- ======= Header ======= -->
     @include('frontend.layouts.include.front-header-nav')
@@ -432,9 +439,6 @@
     <main id="main">
         <!-- Hero Section - Home Page -->
         @yield('hero-section')
-
-        <!-- Clients Section - Home Page -->
-        @yield('client-section')
 
         <!-- About Section - Home Page -->
         @yield('about-section')
@@ -448,23 +452,11 @@
         <!-- Features Section - Home Page -->
         @yield('feature-section')
 
-        <!-- Portfolio Section - Home Page -->
-        @yield('portfolio-section')
+        <!-- Blog Section - Blog Page -->
+        @yield('blog-section')
 
-
-        <!-- Faq Section - Home Page -->
-        @yield('faq-section')
-
-        <!-- Team Section - Home Page -->
-        @yield('team-section')
-
-        <!-- Recent-posts Section - Home Page -->
-        @yield('recent-post')
-
-        <!-- Contact Section - Home Page -->
-        @yield('contact-section')
-
-    </main>
+        <!-- Blog Single - Blog Single Page -->
+        @yield('blog-single')
 
     <!-- ======= Footer ======= -->
     @include('frontend.layouts.include.front-footer')
@@ -474,12 +466,7 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Preloader -->
-    <div id="preloader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('Frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

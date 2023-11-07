@@ -4,19 +4,19 @@
         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>Append</h1>
-            <span>.</span>
+            <h1> Roy's Blog</h1>
+           
         </a>
 
         <!-- Nav Menu -->
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="{{ route('index') }}" class="active">Home</a></li>
+                <li><a href="{{ route('index') }}" >Home</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('services') }}">Services</a></li>
-                <li><a href="index.html">Portfolio</a></li>
+               
                 <li><a href="{{ route('team') }}">Team</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{{ route('blog') }}">Blog</a></li>
                 {{-- <li class="dropdown has-dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down"></i></a>
                     <ul class="dd-box-shadow">

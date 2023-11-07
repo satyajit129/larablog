@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\PostTag;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class BlogPost extends Model
 {
@@ -18,9 +19,13 @@ class BlogPost extends Model
         return $this->belongsTo(PostSubcategory::class,'post_sub_category_id','id');
     }
 
+    // public function tags()
+    // {
+    //     return $this->hasMany(Tag_Post::class,'post_id');
+    // }
     public function tags()
-    {
-        return $this->hasMany(PostTag::class,'post_id');
-    }
+{
+    return $this->belongsToMany(PostTag::class, 'tag__posts', 'post_id', 'post_tag_id');
+}
     
 }

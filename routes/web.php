@@ -34,6 +34,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 Route::get('/',[PageController::class,'index'])->name('index');
 Route::get('/about',[PageController::class,'about'])->name('about');
 Route::get('/services',[PageController::class,'services'])->name('services');
+Route::get('/services-single',[PageController::class,'services_single'])->name('services-single');
+Route::get('/blog',[PageController::class,'blog'])->name('blog');
+Route::get('/blog-single/{id}',[PageController::class,'blog_single'])->name('blog-single');
+Route::get('/portfolio-single',[PageController::class,'portfolio_single'])->name('portfolio-single');
 Route::get('/contact',[PageController::class,'contact'])->name('contact');
 Route::get('/team',[PageController::class,'team'])->name('team');
 
