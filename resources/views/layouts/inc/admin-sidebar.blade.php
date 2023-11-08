@@ -24,6 +24,10 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
                     Banner
                 </a>
+                <a class="nav-link" href="{{ route('admin.Team.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
+                    Team Member
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

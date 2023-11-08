@@ -151,7 +151,7 @@
                   @foreach ($categories as $category)
                   <ul class="mt-3">
                     <li><a href="#">{{ $category->name }} <span>25</span></a></li>
-                    
+
                   </ul>
                   @endforeach
                 </div><!-- End sidebar categories-->

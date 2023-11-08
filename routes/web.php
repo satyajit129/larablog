@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\PostCategoryController;
 use App\Http\Controllers\admin\PostSubCategoryController;
 use App\Http\Controllers\admin\TagController;
+use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\PageController;
 
 /*
@@ -85,4 +86,14 @@ Route::prefix('admin/Post')->group(function () {
     Route::get('/edit/{id}', [BlogPostController::class, 'edit'])->name('admin.BlogPost.edit');
     Route::post('/update/{id}', [BlogPostController::class, 'update'])->name('admin.BlogPost.update');
     Route::get('/destroy/{id}', [BlogPostController::class, 'destroy'])->name('admin.BlogPost.destroy');
+});
+
+// Routr of Team Member
+Route::prefix('admin/Team')->group(function () {
+    Route::get('/',[TeamController::class,'index'])->name('admin.Team.index');
+    Route::get('/create', [TeamController::class,'create'])->name('admin.Team.create');
+    Route::post('/store', [TeamController::class,'store'])->name('admin.Team.store');
+    Route::get('/edit/{id}', [TeamController::class,'edit'])->name('admin.Team.edit');
+    Route::get('/update/{id}', [TeamController::class,'update'])->name('admin.Team.update');
+    Route::get('/destroy/{id}', [TeamController::class,'destroy'])->name('admin.Team.destroy');
 });

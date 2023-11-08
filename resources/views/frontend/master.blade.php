@@ -452,6 +452,9 @@
         <!-- Features Section - Home Page -->
         @yield('feature-section')
 
+        <!-- team Section - team Section Page -->
+        @yield('team-section')
+
         <!-- Blog Section - Blog Page -->
         @yield('blog-section')
 
