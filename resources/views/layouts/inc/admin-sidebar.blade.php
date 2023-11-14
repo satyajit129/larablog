@@ -28,6 +28,10 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
                     Team Member
                 </a>
+                <a class="nav-link" href="{{ route('admin.Service.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-book"></i></div>
+                    Services
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

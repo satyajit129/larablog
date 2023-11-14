@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\PostCategoryController;
 use App\Http\Controllers\admin\PostSubCategoryController;
+use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\TagController;
 use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\PageController;
@@ -35,7 +36,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 Route::get('/',[PageController::class,'index'])->name('index');
 Route::get('/about',[PageController::class,'about'])->name('about');
 Route::get('/services',[PageController::class,'services'])->name('services');
-Route::get('/services-single',[PageController::class,'services_single'])->name('services-single');
+Route::get('/service-single/{id}',[PageController::class,'services_single'])->name('service-single');
 Route::get('/blog',[PageController::class,'blog'])->name('blog');
 Route::get('/blog-single/{id}',[PageController::class,'blog_single'])->name('blog-single');
 Route::get('/portfolio-single',[PageController::class,'portfolio_single'])->name('portfolio-single');
@@ -96,4 +97,12 @@ Route::prefix('admin/Team')->group(function () {
     Route::get('/edit/{id}', [TeamController::class,'edit'])->name('admin.Team.edit');
     Route::post('/update/{id}', [TeamController::class,'update'])->name('admin.Team.update');
     Route::get('/destroy/{id}', [TeamController::class,'destroy'])->name('admin.Team.destroy');
+});
+Route::prefix('admin/Service')->group(function () {
+    Route::get('/',[ServiceController::class,'index'])->name('admin.Service.index');
+    Route::get('/create', [ServiceController::class,'create'])->name('admin.Service.create');
+    Route::post('/store', [ServiceController::class,'store'])->name('admin.Service.store');
+    Route::get('/edit/{id}', [ServiceController::class,'edit'])->name('admin.Service.edit');
+    Route::post('/update/{id}', [ServiceController::class,'update'])->name('admin.Service.update');
+    Route::get('/destroy/{id}', [ServiceController::class,'destroy'])->name('admin.Service.destroy');
 });

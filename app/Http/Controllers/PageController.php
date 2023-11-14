@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PostTag;
 use App\Models\BlogPost;
 use App\Models\PostCategory;
+use App\Models\Service;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,14 @@ class PageController extends Controller
         return view('frontend.pages.about');
     }
     public function services(){
-        return view('frontend.pages.services');
+        $service=Service::all();
+        return view('frontend.pages.services',compact('service'));
     }
     
-    public function services_single(){
-        return view('frontend.pages.services-single');
+    public function services_single($id){
+        $posts = Service::find($id);
+        $service= Service::all();
+        return view('frontend.pages.services-single',compact('posts','service'));
     }
 
     public function team(){
