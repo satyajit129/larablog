@@ -28,8 +28,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
-                    <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-                    <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites
+                    <h2 data-aos="fade-up" data-aos-delay="400">Welcome to Our Website</h2>
+                    <p data-aos="fade-up" data-aos-delay="500">We are team of talented designers making websites
                         with Bootstrap</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <!-- Blog Section - Blog Page -->
     <section id="blog" class="blog">
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up" data-aos-delay="500">
 
             <div class="row gy-4 posts-list">
                 @foreach ($posts as $post)

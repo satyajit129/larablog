@@ -94,6 +94,6 @@ Route::prefix('admin/Team')->group(function () {
     Route::get('/create', [TeamController::class,'create'])->name('admin.Team.create');
     Route::post('/store', [TeamController::class,'store'])->name('admin.Team.store');
     Route::get('/edit/{id}', [TeamController::class,'edit'])->name('admin.Team.edit');
-    Route::get('/update/{id}', [TeamController::class,'update'])->name('admin.Team.update');
+    Route::post('/update/{id}', [TeamController::class,'update'])->name('admin.Team.update');
     Route::get('/destroy/{id}', [TeamController::class,'destroy'])->name('admin.Team.destroy');
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PostTag;
 use App\Models\BlogPost;
 use App\Models\PostCategory;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -24,7 +25,8 @@ class PageController extends Controller
     }
 
     public function team(){
-        return view('frontend.pages.team');
+        $teams=Team::all();
+        return view('frontend.pages.team',compact('teams'));
     }
     public function contact(){
         return view('frontend.pages.contact');

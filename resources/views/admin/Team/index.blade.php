@@ -35,6 +35,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center align-middle">S/N</th>
+                                    <th class="text-center align-middle">Picture</th>
                                     <th class="text-center align-middle">Name</th>
                                     <th class="text-center align-middle">Email</th>
                                     <th class="text-center align-middle"> Position </th>
@@ -43,25 +44,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            {{-- @foreach($post_categories as $category)
+                            @foreach($teams as $team)
 
                               <tr>
                                 <th class="text-center align-middle">{{ $loop->iteration }}</th>
-                                <td class="text-center align-middle">{{ $category->name }}</td>
-                                <td class="text-center align-middle"><details>{{ $category->meta_title }}</details></td>
-                                <td class="text-center align-middle"><details>{{ $category->meta_keyword }}</details></td>
-                                <td class="text-center align-middle"><details>{{ $category->meta_description }}</details></td>
-                                <td class="text-center align-middle">{{ $category->status == 1? "Yes":"No" }}</td>
+                                <td><img src="{{ asset('storage/images/' . $team->picture) }}" width="50px" height="60px" alt="Member picture"></td>
+                                <td class="text-center align-middle">{{ $team->name }}</td>
+                                <td class="text-center align-middle">{{ $team->email }}</td>
+                                <td class="text-center align-middle">{{ $team->Position }}</td>
+                                <td class="text-center align-middle">{{ $team->about_member }}</td>
                                 <td class="btn-td text-center align-middle">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Option">
-                                        <a href="{{ route('admin.PostCategory.edit',['id'=>$category->id]) }}" class="btn btn-success m-1">Edit</a>
-                                        <a href="{{ route('admin.PostCategory.destroy',$category->id) }}" onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
+                                        <a href="{{ route('admin.Team.edit',['id'=>$team->id]) }}" class="btn btn-success m-1">Edit</a>
+                                        <a href="{{ route('admin.Team.destroy',$team->id) }}" onclick="return confirm('Are you really want to delete the data ?')" class="btn btn-danger m-1">Delete</a>
                                     </div>
 
                                 </td>
                               </tr>
 
-                              @endforeach --}}
+                              @endforeach
                             </tbody>
 
                           </table>

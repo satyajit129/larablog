@@ -1,14 +1,14 @@
 @extends('layouts.master')
-@section('title', 'Team Member ADD')
+@section('title', 'Team Member Update')
 
 @section('content')
-    <form action="{{ route('admin.Team.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.Team.update',$editdata->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="card">
             <div class="card-header">
                 <div class="row">
                     <h4 class="card-title mb-0">
-                        Add
+                        Update
                         <small class="text-muted"> Team Member</small>
                     </h4>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Name</label>
-                            <input type="text" value="{{ old('name') }}" class="form-control" id="exampleInputEmail1" name="name"
+                            <input type="text" value="{{ old('name',$editdata->name) }}" class="form-control" id="exampleInputEmail1" name="name"
                                 aria-describedby="emailHelp">
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Email</label>
-                            <input type="text" value="{{ old('email') }}"  name="email" class="form-control"
+                            <input type="text" value="{{ old('email',$editdata->email) }}"  name="email" class="form-control"
                                 id="exampleInputPassword1">
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
@@ -35,14 +35,13 @@
                         <div class="mb-3">
                             <label for="position" class="form-label">Position</label>
                             <select name="position" id="position" class="form-control">
-                                <option value="" disabled selected>Select a position</option>
-                                <option value="manager" {{ old('position') == 'Manager' ? 'selected' : '' }}>Manager</option>
-                                <option value="developer" {{ old('position') == 'Developer' ? 'selected' : '' }}>Developer</option>
-                                <option value="designer" {{ old('position') == 'Designer' ? 'selected' : '' }}>Designer</option>
-                                <option value="analyst" {{ old('position') == 'Analyst' ? 'selected' : '' }}>Analyst</option>
-                                <option value="sales" {{ old('position') == 'Sales' ? 'selected' : '' }}>Sales</option>
-                                <option value="marketing" {{ old('position') == 'Marketing' ? 'selected' : '' }}>Marketing</option>
-                               
+                                <option value="" disabled>Select a position</option>
+                                <option value="manager" {{ old('position', $editdata->position) == 'manager' ? 'selected' : '' }}>Manager</option>
+                                <option value="developer" {{ old('position', $editdata->position) == 'developer' ? 'selected' : '' }}>Developer</option>
+                                <option value="designer" {{ old('position', $editdata->position) == 'designer' ? 'selected' : '' }}>Designer</option>
+                                <option value="analyst" {{ old('position', $editdata->position) == 'analyst' ? 'selected' : '' }}>Analyst</option>
+                                <option value="sales" {{ old('position', $editdata->position) == 'sales' ? 'selected' : '' }}>Sales</option>
+                                <option value="marketing" {{ old('position', $editdata->position) == 'marketing' ? 'selected' : '' }}>Marketing</option>
                             </select>
                             @error('position')
                                 <span class="text-danger">{{ $message }}</span>
@@ -51,7 +50,7 @@
                         
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">About Member</label>
-                            <textarea  name="about_member" class="form-control" rows="3">{{ old('about_member') }}</textarea>
+                            <textarea  name="about_member" class="form-control" rows="3">{{ old('about_member',$editdata->about_member) }}</textarea>
                             @error('about_member')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -75,7 +74,7 @@
                         {{-- <a href="" class="btn btn-success m-1">Add</a>
                         <a href="{{ route('admin.PostCategory.index') }}"  class="btn btn-danger m-1">Back</a> --}}
 
-                        <button type="submit" class="btn btn-success m-1">Add</button>
+                        <button type="submit" class="btn btn-success m-1">Update</button>
                         <a href="{{ route('admin.Team.index') }}" class="btn btn-danger m-1">Back</a>
 
                     </div>
